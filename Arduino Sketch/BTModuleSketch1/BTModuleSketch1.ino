@@ -90,7 +90,7 @@ void loop() {
 
   readLeft();
   readRight();
-  Serial.print("Left (UD-LR): ");
+  Serial.print("\nLeft  (UD-LR): ");
   Serial.print(UD_leftStick, DEC);
   Serial.print("-");
   Serial.print(LR_leftStick, DEC);
@@ -99,6 +99,10 @@ void loop() {
   Serial.print("-");
   Serial.print(LR_rightStick, DEC);
   //gross print block
+  delay(250); //delay the loop so I can actually read the monitor
+  
+  // Turns out that the dead zones on these things are gargantuan.
+  // This shouldn't really be a surprise considering how cheap they are though.
   
   //should I collect a bunch of things in a buffer to serial print at the end of every loop?
   //that would control the max time betwee signals at least
